@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expand Part of Image on Click</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        text-align: center;
+        position: relative;
+        width: 75%; /* Adjust container width as needed */
+        height: 50%
+        margin: 0 auto;
+    }
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    .overlay {
+        position: absolute;
+        top: 225px; /* Adjust top position to position the cropped part */
+        left: 60%; /* Adjust left position to position the cropped part */
+        width: 100px; /* Adjust overlay width */
+        height: 100px; /* Adjust overlay height */
+	background-repeat: no-repeat;
+        cursor: pointer;
+        transition: width 0.5s ease;
+    }
+    .overlay:hover {
+        background-color: rgba(255, 255, 255, 0.7); /* Darken overlay on hover */
+    }
+.expanded2 {
+         width: 100% !important; /* Adjust expanded width */
+        height: 100% !important; /* Adjust expanded height */
+        top: 100px; !important;
+        left: 40% !important;
+	background-image: url('AWS.png');
+	background-repeat: no-repeat;
+
+    }
+    .expanded {
+        width: 100% !important; /* Adjust expanded width */
+        height: 100% !important; /* Adjust expanded height */
+        top: 100px; !important;
+        left: 40% !important;
+	background-image: url('WAF.png');
+	background-repeat: no-repeat;
+    }
+.overlay2 {
+        position: absolute;
+        top: 490px; /* Adjust top position to position the cropped part */
+        left: 15%; /* Adjust left position to position the cropped part */
+        width: 100px; /* Adjust overlay width */
+        height: 100px; /* Adjust overlay height */
+	background-repeat: no-repeat;
+        cursor: pointer;
+        transition: width 0.5s ease;
+    }
+    .overlay2:hover {
+        background-color: rgba(255, 255, 255, 0.7); /* Darken overlay on hover */
+    }
+    
+
+</style>
+</head>
+<body>
+<div class="container">
+    <img class="image" src="SOC architecture.png" alt="Sample Image">
+    <div class="overlay" src="WAF.png" onclick="expandImage()"></div>
+    <div class="overlay2" src="AWS.png" onclick="expandImage2()"></div>
+
+
+</div>
+<script>
+    function expandImage() {
+        var overlay = document.querySelector('.overlay');
+        overlay.classList.toggle('expanded');
+    }
+    function expandImage2() {
+        var overlay = document.querySelector('.overlay');
+        overlay.classList.toggle('expanded2');
+    }
+
+</script>
+</body>
+</html>
